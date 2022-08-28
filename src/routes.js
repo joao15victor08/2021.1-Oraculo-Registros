@@ -19,7 +19,10 @@ routes.post("/records/:id/status", RecordController.setRecordSituation);
 routes.post("/records/:id/close", RecordController.closeRecord);
 routes.post("/records/:id/reopen", RecordController.reopenRecord);
 routes.get("/records/:id/history", RecordController.getRecordsHistory);
-routes.get("/records/:id/current-department", RecordController.findCurrentDepartment);
+routes.get(
+	"/records/:id/current-department",
+	RecordController.findCurrentDepartment
+);
 routes.get("/count/records", RecordController.getTotalNumberOfRecords);
 routes.post("/tag/new", TagController.createTag);
 routes.get("/tags/all", TagController.listTags);
@@ -27,6 +30,7 @@ routes.post("/tag/:id/edit", TagController.editTag);
 routes.get("/records/:id/tags", RecordController.getRecordTags);
 routes.post("/records/:id/add-tag", RecordController.addTagToRecord);
 routes.get("/departments", DepartmentController.listDepartments);
+routes.get("/department", DepartmentController.getDepartmentByName);
 routes.post("/records/:id/edit", RecordController.editRecord);
 routes.post("/users", UserController.createUser);
 routes.post("/user/by-mail/", UserController.getUserByMail);
